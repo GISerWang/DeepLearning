@@ -46,21 +46,21 @@ w1 = tf.Variable(tf.random_normal([1, 4]), name="w1")
 # 定义第一层的bias:bias的维度固定为[1,out_size]
 b1 = tf.Variable(tf.random_normal([1, 4]), name="b1")
 # 计算第一层输出（具有激活函数）
-layer1 = tf.nn.relu(tf.add(tf.matmul(xs, w1), b1))
+layer1 = tf.nn.leaky_relu(tf.add(tf.matmul(xs, w1), b1), alpha=0.2)
 
 # 定义第二层的weight：weight的维度为[in_size,out_size]
 w2 = tf.Variable(tf.random_normal([4, 5]), name="w2")
 # 定义第二层的bias:bias的维度固定为[1,out_size]
 b2 = tf.Variable(tf.random_normal([1, 5]), name="b2")
 # 计算第二层输出（具有激活函数）
-layer2 = tf.nn.relu(tf.add(tf.matmul(layer1, w2), b2))
+layer2 = tf.nn.leaky_relu(tf.add(tf.matmul(layer1, w2), b2), alpha=0.2)
 
 # 定义第三层的weight：weight的维度为[in_size,out_size]
 w3 = tf.Variable(tf.random_normal([5, 3]), name="w3")
 # 定义第三层的bias:bias的维度固定为[1,out_size]
 b3 = tf.Variable(tf.random_normal([1, 3]), name="b3")
 # 计算第三层输出（具有激活函数）
-layer3 = tf.nn.relu(tf.add(tf.matmul(layer2, w3), b3))
+layer3 = tf.nn.leaky_relu(tf.add(tf.matmul(layer2, w3), b3), alpha=0.2)
 
 # 定义输出层的weight：weight的维度为[in_size,out_size]
 out_w = tf.Variable(tf.random_normal([3, 1]), name="out_w")
