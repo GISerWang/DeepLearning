@@ -35,13 +35,13 @@ ds = tf.data.Dataset.from_tensor_slices({
 class MLPModel(object):
     def __init__(self):
         '''模型结构为784->32->64->32->10'''
-        # 定义第一层全连接层的结构
+        # 定义第一层全连接层的结构，仅需要定义输出单元，输入单元不需要设置
         self.layer1 = tf.layers.Dense(units=32, activation=tf.nn.relu)
-        # 定义第二层全连接层的结构
+        # 定义第二层全连接层的结构，仅需要定义输出单元，输入单元不需要设置
         self.layer2 = tf.layers.Dense(units=64, activation=tf.nn.relu)
-        # 定义第三层全连接层的结构
+        # 定义第三层全连接层的结构，仅需要定义输出单元，输入单元不需要设置
         self.layer3 = tf.layers.Dense(units=32, activation=tf.nn.relu)
-        # 定义最后一层全连接层的结构
+        # 定义最后一层全连接层的结构，仅需要定义输出单元，输入单元不需要设置
         self.out_layer = tf.layers.Dense(units=10)
     def forward(self, inputs):
         '''模型结构为784->32->64->32->10'''
