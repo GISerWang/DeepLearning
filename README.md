@@ -11,3 +11,7 @@
 * torchvision版本：0.2.1
 ### 1.2 项目说明
 * data
+* pt：使用pytorch动态图构建神经网络(文件夹)
+* tf：使用tensorflow静态图构建神经网络(文件夹)
+    * mlp_regression_csv：使用tensorflow拟合曲线，使用tensorflow静态图建造多层感知机（MLP），没有使用归一化层(Batch Normalization)
+* tf_eager：使用tensorflow动态图构建神经网络(文件夹)
