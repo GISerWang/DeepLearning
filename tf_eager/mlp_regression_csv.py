@@ -60,11 +60,11 @@ class MLPModel(object):
     def forward(self,inputs):
         '''模型结构为1->4->5->3->1'''
         # 计算第一层输出（具有激活函数）
-        layer1 = tf.nn.relu(tf.add(tf.matmul(inputs, self.w1), self.b1))
+        layer1 = tf.nn.leaky_relu(tf.add(tf.matmul(inputs, self.w1), self.b1), alpha=0.2)
         # 计算第二层输出（具有激活函数）
-        layer2 = tf.nn.relu(tf.add(tf.matmul(layer1, self.w2), self.b2))
+        layer2 = tf.nn.leaky_relu(tf.add(tf.matmul(layer1, self.w2), self.b2), alpha=0.2)
         # 计算第三层输出（具有激活函数）
-        layer3 = tf.nn.relu(tf.add(tf.matmul(layer2, self.w3), self.b3))
+        layer3 = tf.nn.leaky_relu(tf.add(tf.matmul(layer2, self.w3), self.b3), alpha=0.2)
         # 计算输出层的输出（没有写激活函数）
         out_layer = tf.add(tf.matmul(layer3, self.out_w), self.out_b)
         return out_layer
