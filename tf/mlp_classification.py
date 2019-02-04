@@ -35,13 +35,13 @@ iterator = ds.make_one_shot_iterator()
 xs = tf.placeholder(tf.float32, [None, 784])
 ys = tf.placeholder(tf.float32, [None, 10])
 # 与tf.layers.Dense不同，tf.layers.Dense是类，适合应用于动态图；tf.layers.dense是函数，适合应用于静态图
-# 计算第一层输出（具有激活函数）
+# 计算第一层输出（具有激活函数），仅需要定义输出单元，不需要定义输入单元
 layer1_out = tf.layers.dense(xs, units=32, activation=tf.nn.relu)
-# 计算第二层输出（具有激活函数）
+# 计算第二层输出（具有激活函数），仅需要定义输出单元，不需要定义输入单元
 layer2_out = tf.layers.dense(layer1_out, units=64, activation=tf.nn.relu)
-# 计算第三层输出（具有激活函数）
+# 计算第三层输出（具有激活函数），仅需要定义输出单元，不需要定义输入单元
 layer3_out = tf.layers.dense(layer2_out, units=32, activation=tf.nn.relu)
-# 计算输出层的输出（没有写激活函数）
+# 计算输出层的输出（没有写激活函数），仅需要定义输出单元，不需要定义输入单元
 out_layer = tf.layers.dense(layer3_out, units=10)
 '''--------模型end--------'''
 
