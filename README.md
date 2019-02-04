@@ -11,6 +11,8 @@
 * torchvision版本：0.2.1
 ### 1.2 项目说明
 * data：
+    * mlp_regression_train:用于多层感知机拟合的数据集（训练数据）
+    * mlp_regression_test:用于多层感知机拟合的数据集（测试数据）
 * pt：使用pytorch动态图构建神经网络(文件夹)
 * tf：使用tensorflow静态图构建神经网络(文件夹)
     * mlp_regression_csv：使用tensorflow静态图建造多层感知机（MLP）拟合曲线，从csv文件中读取数据，没有使用归一化层(Batch Normalization)
