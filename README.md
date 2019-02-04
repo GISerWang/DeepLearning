@@ -15,3 +15,4 @@
 * tf：使用tensorflow静态图构建神经网络(文件夹)
     * mlp_regression_csv：使用tensorflow静态图建造多层感知机（MLP）拟合曲线，从csv文件中读取数据，没有使用归一化层(Batch Normalization)
 * tf_eager：使用tensorflow动态图构建神经网络(文件夹)
+    * mlp_regression_csv：使用tensorflow动态图建造多层感知机（MLP）拟合曲线，从csv文件中读取数据，没有使用归一化层(Batch Normalization)
