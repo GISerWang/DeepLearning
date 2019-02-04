@@ -13,6 +13,8 @@
 * data：
     * **mlp_regression_train**:用于多层感知机拟合的数据集（训练数据）
     * **mlp_regression_test**:用于多层感知机拟合的数据集（测试数据）
+    * **mnist_train**:mnist数据集的抽样数据,数据量为：6000（训练数据）
+    * **mnist_test**:mnist数据集的抽样数据，数据量为：1000（测试数据）
 * pt：使用pytorch动态图构建神经网络(文件夹)
     * **mlp_regression_csv**：使用pytorch动态图建造多层感知机（MLP）拟合曲线，从csv文件中读取数据，没有使用归一化层(Batch Normalization)
     * **mlp_classification_csv**：使用pytorch动态图建造多层感知机（MLP）进行多分类任务，从csv文件中读取数据，没有使用归一化层(Batch Normalization)
