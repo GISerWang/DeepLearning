@@ -7,7 +7,7 @@ import torch.nn.functional as F
 import numpy as np
 from torch.utils.data import DataLoader, TensorDataset
 import matplotlib.pyplot as plt
-''''''
+'''加载数据 start'''
 trainData = np.loadtxt('../data/mlp_regression_train.csv',delimiter=",", dtype=np.float32)
 testData = np.loadtxt('../data/mlp_regression_test.csv',delimiter=",", dtype=np.float32)
 # 提取训练数据的x 及 y
@@ -18,6 +18,7 @@ y_test = torch.from_numpy(testData[:, 1].reshape(-1, 1))
 # 将内存中的ndarray封装成Dataset，便于使用迭代器
 ds = TensorDataset(x_train, y_train)
 train_loader = DataLoader(dataset=ds, batch_size=32, shuffle=True)
+'''加载数据 end'''
 '''--------定义模型start--------'''
 # 继承指定类：nn.Module
 class MLPModel(nn.Module):
