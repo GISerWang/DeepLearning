@@ -34,21 +34,21 @@ ds = tf.data.Dataset.from_tensor_slices({
 class MLPModel(object):
     def __init__(self):
         # 定义第一层的weight：weight的维度为[in_size,out_size]
-        self.w1 = tf.Variable(tf.random_normal([784, 32]), name="w1")
+        self.w1 = tfe.Variable(tf.random_normal([784, 32]), name="w1")
         # 定义第一层的bias:bias的维度固定为[1,out_size]
-        self.b1 = tf.Variable(tf.random_normal([1, 32]), name="b1")
+        self.b1 = tfe.Variable(tf.random_normal([1, 32]), name="b1")
         # 定义第二层的weight：weight的维度为[in_size,out_size]
-        self.w2 = tf.Variable(tf.random_normal([32, 64]), name="w2")
+        self.w2 = tfe.Variable(tf.random_normal([32, 64]), name="w2")
         # 定义第二层的bias:bias的维度固定为[1,out_size]
-        self.b2 = tf.Variable(tf.random_normal([1, 64]), name="b2")
+        self.b2 = tfe.Variable(tf.random_normal([1, 64]), name="b2")
         # 定义第三层的weight：weight的维度为[in_size,out_size]
-        self.w3 = tf.Variable(tf.random_normal([64, 32]), name="w3")
+        self.w3 = tfe.Variable(tf.random_normal([64, 32]), name="w3")
         # 定义第三层的bias:bias的维度固定为[1,out_size]
-        self.b3 = tf.Variable(tf.random_normal([1, 32]), name="b3")
+        self.b3 = tfe.Variable(tf.random_normal([1, 32]), name="b3")
         # 定义输出层的weight：weight的维度为[in_size,out_size]
-        self.out_w = tf.Variable(tf.random_normal([32, 10]), name="out_w")
+        self.out_w = tfe.Variable(tf.random_normal([32, 10]), name="out_w")
         # 定义输出层的bias：bias的维度固定为[1,out_size]
-        self.out_b = tf.Variable(tf.random_normal([1, 10]), name="out_b")
+        self.out_b = tfe.Variable(tf.random_normal([1, 10]), name="out_b")
     def forward(self, inputs):
         '''模型结构为784->32->64->32->10'''
         # 计算第一层输出（具有激活函数）
