@@ -17,7 +17,7 @@ y_train = trainData[:, 0]
 # 提取测试数据的x,y
 x_test = testData[:, 1:]/255
 y_test = testData[:, 0]
-# 将训练数据及测试数据的label进行one-hot编码
+# 将训练数据的label进行one-hot编码
 with tf.Session() as sess:
     y_train = sess.run(tf.one_hot(y_train, 10))
 # 将训练数据封装到dataSet中
