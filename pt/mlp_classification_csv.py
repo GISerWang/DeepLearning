@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 利用多层感知机多分类，测试数据为在线的minist图像
+# 利用多层感知机多分类，测试数据mnist的csv版本(第一列是数据标签，剩下的为784个像素值)
 # 输入层具有28*28个神经元，输出层有10个神经元
 import torch
 import torch.nn.functional as F
