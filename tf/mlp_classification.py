@@ -2,6 +2,10 @@
 # 利用多层感知机多分类，测试数据mnist的csv版本(第一列是数据标签，剩下的为784个像素值)
 # 输入层具有28*28个神经元，输出层有10个神经元
 # 使用tensorflow高级API进行多分类任务
+# 步骤：
+#   1.首先定义holders
+#   2.其次定义图结构
+#   3.运行网络
 import tensorflow as tf
 import numpy as np
 '''--------加载数据start--------'''
@@ -70,8 +74,8 @@ with tf.Session() as sess:
         sess.run(train, feed_dict={xs: batchData['x'], ys: batchData['labels']})
         if i % 50 == 0:
             y_pre = sess.run(out_layer, feed_dict={xs: x_test})
-            correct_prediction = tf.equal(tf.argmax(y_pre, 1), y_test)
-            # tf.cast 类型转换
-            accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-            print(sess.run(accuracy))
+            correct_prediction = np.equal(np.argmax(y_pre, 1), y_test)
+            # y_pre是ndarray类型，session.run最好只用于网络运行的时候
+            accuracy = np.mean(correct_prediction.astype(np.float))
+            print(accuracy)
 '''--------训练end--------'''
