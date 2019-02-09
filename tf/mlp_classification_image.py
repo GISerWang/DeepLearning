@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
 # 利用多层感知机多分类，测试数据为在线的minist图像
 # 输入层具有28*28个神经元，输出层有10个神经元
+# 步骤：
+#   1.首先定义holders
+#   2.其次定义图结构
+#   3.运行网络
 import tensorflow as tf
+import numpy as np
 from tensorflow.examples.tutorials.mnist import input_data
 '''--------加载数据start--------'''
 mnist = input_data.read_data_sets("../data/mnist_tensorflow/", one_hot = True)
@@ -67,10 +72,10 @@ with tf.Session() as sess:
             # 测试数据
             y_pre = sess.run(out_layer, feed_dict={xs: x_test})
             # 在测试数据的时候，由于是分类任务，在测试时，不需要softmax，直接argmax即可。
-            # 判断有几个数据分类正确，tf.argmax(y_test, 1)按行查找，最大的索引
-            correct_prediction = tf.equal(tf.argmax(y_pre, 1), tf.argmax(y_test, 1))
+            # 判断有几个数据分类正确，np.argmax(y_test, 1)按行查找，最大的索引
+            correct_prediction = np.equal(np.argmax(y_pre, 1), np.argmax(y_test, 1))
             # 计算正确率
-            # tf.cast() 将True转为1，False转为0，从而使用reduce_mean计算平均数
-            accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-            print(sess.run(accuracy))
+            # astype将True转为1，False转为0，从而使用np.mean计算平均数
+            accuracy = np.mean(correct_prediction.astype(np.float))
+            print(accuracy)
 '''--------训练end--------'''
