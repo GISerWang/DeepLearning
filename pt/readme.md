@@ -12,6 +12,8 @@
 * **mlp_classification_csv**：使用pytorch动态图建造多层感知机（MLP）进行多分类任务，从csv文件中读取数据，没有使用归一化层(Batch Normalization)
 * **mlp_classification_image**：使用pytorch动态图建造多层感知机（MLP）进行多分类任务，在线下载数据，没有使用归一化层(Batch Normalization)
 * **mlp_classification**：使用pytorch动态图建造多层感知机（MLP）进行多分类任务，使用高级API，没有使用归一化层(Batch Normalization)
+* **cnn_classification_csv**：使用pytorch动态图建造卷积神经网络（CNN）进行多分类任务，从csv文件中读取数据，使用Drop与BN层
+* **cnn_classification_image**：使用pytorch动态图建造卷积神经网络（CNN）进行多分类任务，在线下载数据，使用Drop与BN层
 * **cnn_classification**：使用pytorch动态图建造卷积神经网络（CNN）进行多分类任务，使用高级API，使用Drop与BN层
 ### 1.3 项目注意
 
