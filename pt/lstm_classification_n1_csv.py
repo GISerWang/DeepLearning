@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # 利用长短时记忆神经网络（LSTM）多分类，测试数据mnist的csv版本
-# 输入数据具有三个维度，一般为[batch,time,width]，输出层有10个神经元
+# 输入数据具有三个维度，一般为[batch,time,data]，输出层有10个神经元
 import torch
 import torch.autograd as autograd
 import torch.nn as nn
