@@ -15,6 +15,7 @@
 * **cnn_classification_csv**：使用pytorch动态图建造卷积神经网络（CNN）进行多分类任务，从csv文件中读取数据，使用Drop与BN层
 * **cnn_classification_image**：使用pytorch动态图建造卷积神经网络（CNN）进行多分类任务，在线下载数据，使用Drop与BN层
 * **cnn_classification**：使用pytorch动态图建造卷积神经网络（CNN）进行多分类任务，使用高级API，使用Drop与BN层
+* **lstm_classification_n1_csv**：使用pytorch动态图建造长短时神经网络（LSTM）进行多分类任务（many-to-one），从csv文件中读取数据（mnist），使用高级API，没有使用embedding
 ### 1.3 项目注意
 
 * 在数据拟合的过程中，使用relu激活函数，不能拟合小于0的值，因此推荐使用Leaky ReLU等激活器
